@@ -1,0 +1,43 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 60px;
+  gap: 40px;
+  font-size: 18px;
+}
+
+nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
+  padding-left: 60px;
+}
+
+.title {
+  width: 25%;
+}
+
+.hero h2 {
+  font-size: 33px;
+  margin-top: 5%;
+  font-weight: normal;
+  background: linear-gradient(to right, #005b97, #0075be, #1e9cd7, #41b792, #49c14c, black, black, black, black, black);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 22px;
+  max-width: 600px;
+  margin-top: 1%;
+  line-height: 1.6;
+}
