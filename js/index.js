@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const wheel = document.querySelector(".wheel");
   const image = document.querySelector(".image-skills");
   const wheelText = document.querySelector(".wheel-text");
+  const h3 = document.querySelector(".reveal-title");
 
   let hasRotated = false;
   let rotation = 0;
@@ -79,18 +80,49 @@ document.addEventListener("DOMContentLoaded", () => {
     if (hasRotated) return; // prevent multiple clicks
     hasRotated = true;
 
-    // 1. Rotate the wheel
+    // Show the image and text immediately
+    image.style.display = "block";
+    h3.style.display = "block";
+
+    // Step definitions
+    const steps = [
+      {
+        text: "Research",
+        gradient: "linear-gradient(to right, #005c97, black)",
+        h3Text: "I examine user behaviours and data to identify patterns and opportunities for optimizing designs",
+        imgSrc: "images/analysisPorto.png"
+      },
+      {
+        text: "Analysis",
+        gradient: "linear-gradient(to right, #0075be, black)",
+        h3Text: "I embrace creative thinking and imagination to generate innovative ideas that enhance user experiences",
+        imgSrc: "images/ideationPorto.png"
+      },
+      {
+        text: "Ideation",
+        gradient: "linear-gradient(to right, #1e9cd7, black)",
+        h3Text: "I craft wireframes, prototypes, illustrations, and animations to elevate both user experience and interface design",
+        imgSrc: "images/designPorto.png"
+      },
+      {
+        text: "Design",
+        gradient: "linear-gradient(to right, #41b792, black)",
+        h3Text: "I bring design concepts to life by developing functional and smooth solutions that blend creativity with technology",
+        imgSrc: "images/developmentPorto.png"
+      },
+      {
+        text: "Development",
+        gradient: "linear-gradient(to right, #49c14c, black)",
+        h3Text: "",
+        imgSrc: ""
+      }
+    ];
+
+    // Apply initial rotation and text (Research)
     rotation += 360;
     wheel.style.transition = "transform 0.2s ease";
     wheel.style.transform = `rotate(${rotation}deg)`;
 
-    // 2. Show the image and text
-    image.style.display = "block";
-    const h3 = document.querySelector(".reveal-title");
-    h3.style.display = "block";
-
-
-    // 3. Change the text and gradient to "Research"
     wheelText.textContent = "Research";
     wheelText.style.background = "linear-gradient(to right, #005c97, black)";
     wheelText.style.backgroundClip = "text";
@@ -98,93 +130,50 @@ document.addEventListener("DOMContentLoaded", () => {
     wheelText.style.color = "transparent";
     wheelText.style.webkitTextFillColor = "transparent";
 
-    // 4. After 2 seconds, rotate again and update to Analysis
+    // Handle steps with a loop
+    steps.forEach((step, index) => {
+      setTimeout(() => {
+        rotation += 360;
+        wheel.style.transform = `rotate(${rotation}deg)`;
+
+        // Update text and styles
+        wheelText.textContent = step.text;
+        wheelText.style.background = step.gradient;
+        wheelText.style.backgroundClip = "text";
+        wheelText.style.webkitBackgroundClip = "text";
+        wheelText.style.color = "transparent";
+        wheelText.style.webkitTextFillColor = "transparent";
+
+        // Update h3 and image if available
+        if (step.h3Text) {
+          h3.textContent = step.h3Text;
+        }
+        if (step.imgSrc) {
+          image.src = step.imgSrc;
+        }
+      }, (index + 1) * 5000); // 5000ms (3 seconds) between each
+    });
+
+    // Final step: Reset everything after all rotations
     setTimeout(() => {
       rotation += 360;
       wheel.style.transform = `rotate(${rotation}deg)`;
-      
 
-      // Update text to "Analysis"
-      wheelText.textContent = "Analysis";
-      wheelText.style.background = "linear-gradient(to right, #0075be, black)";
+      // Reset text
+      wheelText.textContent = "Swirl Me";
+      wheelText.style.background = "linear-gradient(to right, #bababa, black)";
       wheelText.style.backgroundClip = "text";
       wheelText.style.webkitBackgroundClip = "text";
       wheelText.style.color = "transparent";
       wheelText.style.webkitTextFillColor = "transparent";
-      h3.textContent = "I examine user behaviours and data to identify patterns and opportunities for optimizing designs";
 
-      // Swap image
-      image.src = "images/analysisPorto.png";
-    }, 3000);
+      // Hide h3 and image
+      h3.style.display = "none";
+      image.style.display = "none";
 
-      // 5. After 2 seconds, rotate again and update to Ideation
-      setTimeout(() => {
-        rotation += 360;
-        wheel.style.transform = `rotate(${rotation}deg)`;
-  
-        // Update text to "Ideation"
-        wheelText.textContent = "Ideation";
-        wheelText.style.background = "linear-gradient(to right, #1e9cd7, black)";
-        wheelText.style.backgroundClip = "text";
-        wheelText.style.webkitBackgroundClip = "text";
-        wheelText.style.color = "transparent";
-        wheelText.style.webkitTextFillColor = "transparent";
-        h3.textContent = "I embrace creative thinking and imagination to generate innovative ideas that enhance user experiences";
-  
-        // Swap image
-        image.src = "images/ideationPorto.png";
-      }, 6000);
-
-      // 6. After 2 seconds, rotate again and update to Design
-      setTimeout(() => {
-        rotation += 360;
-        wheel.style.transform = `rotate(${rotation}deg)`;
-  
-        // Update text to "Design"
-        wheelText.textContent = "Design";
-        wheelText.style.background = "linear-gradient(to right, #41b792, black)";
-        wheelText.style.backgroundClip = "text";
-        wheelText.style.webkitBackgroundClip = "text";
-        wheelText.style.color = "transparent";
-        wheelText.style.webkitTextFillColor = "transparent";
-        h3.textContent = "I craft wireframes, prototypes, illustrations, and animations to elevate both user experience and interface design";
-  
-        // Swap image
-        image.src = "images/designPorto.png";
-      }, 9000);
-
-      // 7. After 2 seconds, rotate again and update to Development
-      setTimeout(() => {
-        rotation += 360;
-        wheel.style.transform = `rotate(${rotation}deg)`;
-  
-        // Update text to "Development"
-        wheelText.textContent = "Development";
-        wheelText.style.background = "linear-gradient(to right, #49c14c, black)";
-        wheelText.style.backgroundClip = "text";
-        wheelText.style.webkitBackgroundClip = "text";
-        wheelText.style.color = "transparent";
-        wheelText.style.webkitTextFillColor = "transparent";
-        h3.textContent = "I bring design concepts to life by developing functional and smooth solutions that blend creativity with technology";
-  
-        // Swap image
-        image.src = "images/developmentPorto.png";
-      }, 12000);
-      setTimeout(() => {
-        rotation += 360;
-        wheel.style.transform = `rotate(${rotation}deg)`;      
-        // Update text to "Swirl Me" with gradient
-        wheelText.textContent = "Swirl Me";
-        wheelText.style.background = "linear-gradient(to right, #bababa, black)";
-        wheelText.style.backgroundClip = "text";
-        wheelText.style.webkitBackgroundClip = "text";
-        wheelText.style.color = "transparent";
-        wheelText.style.webkitTextFillColor = "transparent";
-      
-        // Hide h3 and image
-        h3.style.display = "none";
-        image.style.display = "none";
-      }, 15000);      
+      // Allow another click
+      hasRotated = false;
+    }, (steps.length + 1) * 3000); // steps.length + 1 because we wait one more after last
   });
 });
 
