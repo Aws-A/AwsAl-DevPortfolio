@@ -1,0 +1,309 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 60px;
+  gap: 40px;
+  font-size: 18px;
+  position: relative; /* required for absolutely positioned children */
+}
+
+#logo {
+  width: 7%;
+  margin-left: 5%;
+}
+
+nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #41B792;
+}
+
+nav a:active {
+  color: #005b97;
+  font-weight: bold;
+}
+
+.navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Wrap Projects link and images */
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+/* Gentle floating effect */
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-1px, 1px);
+  }
+  50% {
+    transform: translate(1px, -1px);
+  }
+  75% {
+    transform: translate(-1px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.project-images img {
+  position: absolute;
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+  animation: float 3s ease-in-out infinite;
+  transition: none;
+}
+
+/* On hover, only change the image source and keep size intact */
+.project-images img:hover {
+  width: 150px;
+}
+
+/* Add delay for different images to move freely */
+.project-images .evento {
+  top: 0;
+  left: 0;
+  animation-delay: 0s; /* No delay for this one */
+}
+
+.project-images .mindquota {
+  top: 90px;
+  left: 20px;
+  animation-delay: 1s; /* Add a delay for independent movement */
+}
+
+.project-images {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 300px;
+  height: 500px;
+  z-index: 1000;
+  padding-top: 20px; /* creates an overlap buffer */
+}
+
+.nav-item:hover .project-images {
+  display: block;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
+  padding-left: 60px;
+  margin-bottom: 25%;
+  margin-left: 7%;
+}
+
+.hero h2 {
+  opacity: 0;
+  transition: opacity 2s ease;  /* Smooth transition */
+  font-size: 25px;
+  margin-top: 5%;
+  font-weight: normal;
+  background: linear-gradient(to right, #005b97, #0075be, #1e9cd7, #41b792, #49c14c, black, black);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero img {
+  width: 40%;
+  margin-bottom: 7%;
+}
+
+.hero p {
+  font-size: 22px;
+  max-width: 600px;
+  margin-top: 1%;
+  line-height: 1.6;
+  opacity: 0;
+}
+
+text {
+  font-family: philosopher;
+  font-size: 33px;
+  transition: fill 0.4s ease;
+}
+
+text {
+  transform: rotate(-50deg);
+  transform-origin: 0% 50%; /* Rotate from the start of the text */
+  transition: transform 1s ease;
+}
+
+/* Animation for each word */
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-30px);  /* Make it fall from above */
+  animation: dropIn 0.5s ease forwards;
+}
+
+/* Keyframes for the drop-in effect */
+@keyframes dropIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-detail {
+  margin-left: 15%;
+  margin-bottom: 25%;
+}
+
+.ux {
+  width: 15%;
+  height: 15%;
+}
+
+.dev {
+  width: 15%;
+  height: 15%;
+}
+
+.project-detail h3 {
+  font-size: 25px;
+}
+
+.detail {
+  height: 100%;
+  margin-bottom: 25%;
+}
+
+.top {
+  display: flex;
+}
+
+.right {
+  margin-right: 15%;
+  text-align: right;
+}
+
+.bottom {
+  margin-left: 12%;
+}
+
+.research {
+  background: linear-gradient(to right, #005c97, #005c97, black);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.uxBody {
+  margin-left: 3%;
+}
+
+.uxBody img {
+  width: 50%;
+  height: auto;
+}
+
+.design {
+  background: linear-gradient(to right,  #0075be, #0075be, #0075be,#0075be, #0075be, #0075be, #0075be, black);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.userflow-E {
+  width: 80%;
+}
+
+.wireframe-E {
+  width: 80%;
+  margin-bottom: 2%;
+}
+
+.prototype-E {
+  margin-top: 2%;
+  width: 80%;
+}
+
+.backend-E {
+  width: 75%;
+}
+
+.frontend-E {
+  width: 75%;
+}
+
+.database {
+  margin-left: 3%;
+  background: linear-gradient(to right,  #1e9cd7, #1e9cd7, black);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.databaseBody {
+  margin-left: 3%;
+}
+
+.databaseBody img {
+  width: 50%;
+  height: auto;
+}
+
+.back {
+  background: linear-gradient(to right,   #41b792, #41b792, #41b792,#41b792, #41b792, #41b792, #41b792, black);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.front {
+  background: linear-gradient(to right, #49c14c, black, black, black, black, black, black, black);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+b {
+  background: linear-gradient(to right, #005b97, #0075be, #1e9cd7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.footer {
+  display: flex;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.footer p {
+  background: linear-gradient(to right, #005b97, #0075be, #1e9cd7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 17px;
+  font-weight: 600;
+  margin-left: 10%;
+  width: 200px;
+}
+
+.footer img {
+  width: 5%;
+  margin-left: 10%;
+}

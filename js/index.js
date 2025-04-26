@@ -199,6 +199,9 @@ document.addEventListener('DOMContentLoaded', () => {
     eventoImg.addEventListener('mouseout', () => {
       eventoImg.src = 'images/eventoNav.png';
     });
+    eventoImg.addEventListener('click', () => {
+      window.location.href = 'evento.html';
+    });
   }
 
   if (mindquotaImg) {
@@ -207,6 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     mindquotaImg.addEventListener('mouseout', () => {
       mindquotaImg.src = 'images/mindquotaNav.png';
+    });
+    mindquotaImg.addEventListener('click', () => {
+      window.location.href = 'mindquota.html';
     });
   }
 });
@@ -266,3 +272,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const paragraphs = document.querySelectorAll('.myAreas p');
+      const headings = document.querySelectorAll('h3');
+
+      paragraphs.forEach(p => p.style.opacity = '1');
+      headings.forEach(h => h.style.opacity = '1');
+    }, 3000); // 3 seconds delay
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Select the images
+    const uxImage = document.getElementById('ux-img');
+    const devImage = document.getElementById('dev-img');
+  
+    // Function to check if the element is in the viewport
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+  
+    // Function to change image source after 1 second
+    function changeImageOnView(imageElement, newSrc) {
+      if (isInViewport(imageElement)) {
+        setTimeout(() => {
+          imageElement.src = newSrc;
+        }, 1000); // 1 second delay
+      }
+    }
+  
+    // Check images visibility and change them when visible
+    window.addEventListener('scroll', () => {
+      changeImageOnView(uxImage, 'images/ux-on.png');
+      changeImageOnView(devImage, 'images/dev-on.png');
+    });
+  });
+  

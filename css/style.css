@@ -102,13 +102,6 @@ nav a:active {
   display: block;
 }
 
-h4 {
-  font-family: Great Vibes;
-  font-size: 22px;
-  margin-left: 5%;
-  font-weight: 400;
-}
-
 .hero {
   position: relative;
   display: flex;
@@ -117,24 +110,6 @@ h4 {
   height: 80vh;
   padding-left: 60px;
   margin-bottom: 25%;
-}
-
-text {
-  font-family: philosopher;
-  font-size: 33px;
-  transition: fill 0.4s ease;
-}
-
-text {
-  transform: rotate(-50deg);
-  transform-origin: 0% 50%; /* Rotate from the start of the text */
-  transition: transform 1s ease;
-}
-
-.description {
-  position: absolute;
-  margin-top: 10%;
-  margin-left: 20%;
 }
 
 .hero h2 {
@@ -155,6 +130,24 @@ text {
   margin-top: 1%;
   line-height: 1.6;
   opacity: 0;
+}
+
+text {
+  font-family: philosopher;
+  font-size: 33px;
+  transition: fill 0.4s ease;
+}
+
+text {
+  transform: rotate(-50deg);
+  transform-origin: 0% 50%; /* Rotate from the start of the text */
+  transition: transform 1s ease;
+}
+
+.description {
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 20%;
 }
 
 /* Animation for each word */

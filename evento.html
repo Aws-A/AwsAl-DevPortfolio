@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aws Al-Raheem | Portfolio</title>
-  <link type="text/css" href="css/style.css" rel="stylesheet" >
+  <link type="text/css" href="css/evento.css" rel="stylesheet" >
   <script src="js/index.js" defer></script>
   <style>
     body {
@@ -20,8 +20,8 @@
   <div class="navigation-bar">
     <img src="images/LogoN.svg" id="logo"/>
     <nav>
-      <a href="#">Homepage</a>
-      <a href="#">About</a>
+      <a href="index.html">Homepage</a>
+      <a href="about.html">About</a>
       
       <div class="nav-item">
         <a href="#">Projects</a>
@@ -31,55 +31,70 @@
         </div>
       </div>
   
-      <a href="#">Contact</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
   
   <section class="hero">
-    <svg viewBox="-100 -100 700 300" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <!-- Define the arched path -->
-        <path id="archPath" d="M 0 50 Q 50 -20 550 150" fill="none" />
-  
-        <!-- Gradient for hover effect -->
-        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="black" />
-          <stop offset="100%" stop-color="#bababa" />
-        </linearGradient>
-      </defs>
-  
-      <!-- Apply text to the curved path -->
-      <text id="title" fill="#bababa">
-        <textPath href="#archPath" startOffset="0%" text-anchor="start">
-          Aws Al-Raheem
-        </textPath>
-      </text>
-    </svg>
-    <div class="description" id="description">
-      <h2>Web Developer & Product Designer</h2>
-      <p>
-        Inspired by a passion for creativity, research, and design, I create exceptional
-        digital experiences from websites to apps. My mission is to innovate and
-        improve every day, delivering products that inspire and connect.
-      </p>
-    </div>
-    <button> Check my Resume</button>
+    <img src="images/eventoProject.png"/>
+    <p>
+      Quiz app to share knowledge and participate in it as well with simple way and beautiful interface as users can contribute to the visuals of the app 
+    </p>
   </section>
-  <section class="skills">
-    <h5>Skills</h5>  
-    <div class="skills-dev">
-        <div class="wheel-container">
-          <img src="images/wheel.png" alt="Skill Wheel" class="wheel" />
-          <div class="wheel-text">Swirl Me</div>
+  <section class="project-detail">
+    <div class="ux-div">
+      <div class="top detail">
+        <img src="images/ux.png" class="ux" id="ux-img"/>
+        <div class="uxBody">
+          <h3 class="research"> UX Research </h3>
+          <p> Building our problem statement and UX hypothesis. <br>
+              According to it we have our target <b> persona </b>
+          </p>
+          <img src="images/persona-E.png"/>
         </div>
-          <img src="images/researchPorto.png" class="image-skills"/>
-          <h3 class="reveal-title"> I continuously analyze designs and businesses to learn, grow, and reflect these insights in my work everyday </h3>
       </div>
-  </section>
-  <section class="projects">
-    <h5>Projects</h5>
-    <img src="images/eventoProject.png" id="eventoProjectImg"/>
-    <img src="images/mindquotaProject.png" id="mindquotaProjectImg"/>
+      <div class="right detail">
+        <h3 class="design"> Design Thinking </h3>
+        <p>
+          Creating our <b>user flow </b> to follow user process <br>
+          from the start to the end
+        </p>
+        <img src="images/userflow-E.png" class="userflow-E"/>
+        <p>
+          Starting with <b> wireframes </b> to have the elements <br>
+          will use, the we developed them to the <b> prototypes </b> pages that we need
+        </p>
+          <img src="images/wireframe-E.png" alt="Wireframes" class="wireframe-E"/>
+          <img src="images/prototype-E.png" alt="Prototypes" class="prototype-E"/>
+      </div>
+    </div>
+    <div class="dev-div">
+      <div class="top detail">
+        <img src="images/dev.png" class="dev" id="dev-img"/>
+        <div class="databaseBody">  
+          <h3 class="database "> Database </h3>
+          <p> We built the database and ERD, we used mysql to save the info. <br> at the beginning then I used Firebase to save the info.
+          </p>
+          <img src="images/ERD-E.png"/>
+       </div>
+      </div>
+      <div class="right detail">
+        <h3 class="back"> Back-end </h3>
+        <p> We used react and GitHub at the beginning <br>
+            then I used flutter with VS Code for <br>
+            app.development
+        </p>
+        <img src="images/backend-E.png" class="backend-E"/>
+      </div>
+      <div class="bottom detail">
+        <h3 class="front"> Front-end </h3>
+        <p> I worked with html and css to materralize my <br>
+          prototypes with Andriod Studio to keep with the
+          app interface
+        </p>
+      <img src="images/frontend-E.png" class="frontend-E"/>
+      </div>
+    </div>
   </section>
   <section class="footer">
     <p> awsalraheem@gmail.com </p>

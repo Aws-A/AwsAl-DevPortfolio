@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aws Al-Raheem | Portfolio</title>
-  <link type="text/css" href="css/style.css" rel="stylesheet" >
+  <link type="text/css" href="css/about.css" rel="stylesheet" >
   <script src="js/index.js" defer></script>
   <style>
     body {
@@ -20,8 +20,8 @@
   <div class="navigation-bar">
     <img src="images/LogoN.svg" id="logo"/>
     <nav>
-      <a href="#">Homepage</a>
-      <a href="#">About</a>
+      <a href="index.html">Homepage</a>
+      <a href="about.html">About</a>
       
       <div class="nav-item">
         <a href="#">Projects</a>
@@ -31,55 +31,45 @@
         </div>
       </div>
   
-      <a href="#">Contact</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
   
   <section class="hero">
-    <svg viewBox="-100 -100 700 300" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <!-- Define the arched path -->
-        <path id="archPath" d="M 0 50 Q 50 -20 550 150" fill="none" />
-  
-        <!-- Gradient for hover effect -->
-        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="black" />
-          <stop offset="100%" stop-color="#bababa" />
-        </linearGradient>
-      </defs>
-  
-      <!-- Apply text to the curved path -->
-      <text id="title" fill="#bababa">
-        <textPath href="#archPath" startOffset="0%" text-anchor="start">
-          Aws Al-Raheem
-        </textPath>
-      </text>
-    </svg>
-    <div class="description" id="description">
-      <h2>Web Developer & Product Designer</h2>
+      <h2>About Me</h2>
       <p>
-        Inspired by a passion for creativity, research, and design, I create exceptional
-        digital experiences from websites to apps. My mission is to innovate and
-        improve every day, delivering products that inspire and connect.
+        My journey starts with engineering, to technology field with UX/UI Design, which meets my passion to ideate and create solutions
+        for users with appealing and unique design, I did enhance
+        with full-stack web development
       </p>
-    </div>
-    <button> Check my Resume</button>
+      <img src="images/journey.png" class="journey"/>
   </section>
-  <section class="skills">
-    <h5>Skills</h5>  
-    <div class="skills-dev">
-        <div class="wheel-container">
-          <img src="images/wheel.png" alt="Skill Wheel" class="wheel" />
-          <div class="wheel-text">Swirl Me</div>
+  <section class="myAreas">
+    <h5>My journey</h5>  
+      <div class="engineering">
+        <div class="title engineeringTitle">
+          <h3> Engineering </h3>
+          <img src="images/engineeringIcon.png"/>
         </div>
-          <img src="images/researchPorto.png" class="image-skills"/>
-          <h3 class="reveal-title"> I continuously analyze designs and businesses to learn, grow, and reflect these insights in my work everyday </h3>
+        <p> I have a B.Sc. in chemical engineering and a certificate from Metropolitan University of Toronto. As a member of PEO (Professional Engineers Ontario), I’ve worked in research and quality assurance, which has strengthened my problem-solving and analytical skills across various fields          
+        </p>
       </div>
-  </section>
-  <section class="projects">
-    <h5>Projects</h5>
-    <img src="images/eventoProject.png" id="eventoProjectImg"/>
-    <img src="images/mindquotaProject.png" id="mindquotaProjectImg"/>
+      <div class="design">
+        <div class="title designTitle">
+         <img src="images/designIcon.png" />
+         <h3> UX/UI Design </h3>
+        </div>
+        <p> I started my UX/UI design journey with a Google course, followed by completing the program at the University of Toronto. I’ve worked on various projects, freelanced, and  products for Alleyne Company, specializing in UX, graphic design, animation, and video editing using tools like Adobe Creative Suite and Figma
+        </p>
+      </div>
+      <div class="development">
+        <div class="title developmentTitle">
+          <h3> Web development </h3>
+          <img src="images/developmentIcon.png"/>
+        </div>
+        <p> I completed a PHP course and advanced my coding skills at Lighthouse Labs, gaining expertise in Back-end and Front-end development. I work with technologies like HTML, CSS, JavaScript, jQuery, React, Ruby, and Bootstrap          
+        </p>
+      </div>
   </section>
   <section class="footer">
     <p> awsalraheem@gmail.com </p>
