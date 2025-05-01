@@ -19,12 +19,12 @@ nav a {
 }
 
 nav a:hover {
-  color: #41B792;
+  color: #005b97;
 }
 
-nav a:active {
-  color: #005b97;
-  font-weight: bold;
+nav a.active {
+  color: #41B792 !important;
+  font-weight: bold !important;
 }
 
 .navigation-bar {
@@ -107,7 +107,7 @@ nav a:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80vh;
+  height: 100vh;
   padding-left: 60px;
   margin-bottom: 25%;
   margin-left: 7%;
@@ -125,17 +125,25 @@ nav a:active {
   color: transparent;
 }
 
-.hero img {
-  width: 40%;
+.project-logo {
+  margin-top: 25%;
   margin-bottom: 7%;
+  width: 33%;
 }
 
 .hero p {
   font-size: 22px;
   max-width: 600px;
   margin-top: 1%;
+  margin-bottom: 7%;
   line-height: 1.6;
   opacity: 0;
+}
+
+.evento-gif {
+  width: 40%;
+  border-radius: 27px;
+  margin-left: 40%;
 }
 
 text {
@@ -169,6 +177,10 @@ text {
 .project-detail {
   margin-left: 15%;
   margin-bottom: 25%;
+}
+
+.project-detail p{
+  font-size: 20px;
 }
 
 .ux {
@@ -210,13 +222,17 @@ text {
   color: transparent;
 }
 
-.uxBody {
-  margin-left: 3%;
+.evento-Img {
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
-.uxBody img {
-  width: 50%;
-  height: auto;
+.persona {
+  width: 83%;
+}
+
+.uxBody {
+  margin-left: 3%;
 }
 
 .design {
@@ -236,20 +252,22 @@ text {
 }
 
 .prototype-E {
-  margin-top: 2%;
+  width: 80%;
+}
+
+.ERD {
   width: 80%;
 }
 
 .backend-E {
-  width: 75%;
+  width: 80%;
 }
 
 .frontend-E {
-  width: 75%;
+  width: 80%;
 }
 
 .database {
-  margin-left: 3%;
   background: linear-gradient(to right,  #1e9cd7, #1e9cd7, black);
   background-clip: text;
   -webkit-background-clip: text;
@@ -258,11 +276,6 @@ text {
 
 .databaseBody {
   margin-left: 3%;
-}
-
-.databaseBody img {
-  width: 50%;
-  height: auto;
 }
 
 .back {
@@ -306,4 +319,115 @@ b {
 .footer img {
   width: 5%;
   margin-left: 10%;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .hero {
+    margin-bottom: 35%;
+    padding-left: 30px;
+  }
+
+  .project-logo,
+  .evento-gif,
+  .userflow-E,
+  .wireframe-E,
+  .prototype-E,
+  .ERD,
+  .backend-E,
+  .frontend-E {
+    width: 70%;
+  }
+
+  .persona {
+    width: 95%;
+  }
+
+  .right, .bottom {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .navigation-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  #logo {
+    width: 25%;
+    margin: 0 auto;
+  }
+
+  .project-images {
+    position: static;
+    display: block;
+    padding-top: 10px;
+    width: 100%;
+    height: auto;
+  }
+
+  .project-images img {
+    position: relative;
+    width: 100px;
+    margin: 10px 0;
+  }
+
+  .hero {
+    padding: 0 20px;
+    margin: 10% 0;
+    align-items: center;
+  }
+
+  .project-logo {
+    width: 80%;
+    margin-top: 10%;
+  }
+
+  .evento-gif {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .project-detail {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .top,
+  .bottom,
+  .right {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .ux,
+  .dev {
+    width: 30%;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer p,
+  .footer img {
+    margin: 0;
+  }
+
+  .footer img {
+    width: 10%;
+  }
 }

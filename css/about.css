@@ -19,12 +19,12 @@ nav a {
 }
 
 nav a:hover {
-  color: #41B792;
+  color: #005b97;
 }
 
-nav a:active {
-  color: #005b97;
-  font-weight: bold;
+nav a.active {
+  color: #41B792 !important;
+  font-weight: bold !important;
 }
 
 .navigation-bar {
@@ -109,7 +109,7 @@ nav a:active {
   justify-content: center;
   height: 111vh;
   padding-left: 60px;
-  margin-bottom: 25%;
+  margin-bottom: 20%;
   margin-left: 7%;
 }
 
@@ -293,4 +293,149 @@ h5 {
 .footer img {
   width: 5%;
   margin-left: 10%;
+}
+
+/* For tablets and below */
+@media (max-width: 1024px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  #logo {
+    width: 20%;
+    margin-left: 5%;
+  }
+
+  .hero {
+    padding-left: 30px;
+    margin-left: 0;
+    height: auto;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .journey {
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  .myAreas p {
+    font-size: 16px;
+  }
+
+  .engineering, .design, .development {
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+  }
+
+  .design {
+    text-align: left;
+  }
+
+  .development {
+    text-align: left;
+  }
+
+  h3 {
+    width: auto;
+    font-size: 28px;
+  }
+
+  .title img {
+    width: 8%;
+  }
+
+  .designTitle img {
+    margin-left: 5%;
+  }
+
+  .developmentTitle img {
+    margin-left: 5%;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .footer p {
+    margin: 10px 0 0 10%;
+  }
+
+  .footer img {
+    margin: 10px 0 0 10%;
+    width: 8%;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 600px) {
+  nav {
+    font-size: 16px;
+  }
+
+  #logo {
+    width: 30%;
+  }
+
+  .hero h2 {
+    font-size: 20px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .journey {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .engineering, .design, .development {
+    margin-top: 10%;
+  }
+
+  h5 {
+    font-size: 36px;
+    margin-left: 5%;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title img {
+    width: 12%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .project-images img {
+    width: 80px;
+  }
+
+  .project-images .mindquota {
+    top: 70px;
+  }
+
+  .footer img {
+    width: 10%;
+  }
 }

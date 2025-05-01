@@ -72,96 +72,97 @@ document.addEventListener("DOMContentLoaded", () => {
   const image = document.querySelector(".image-skills");
   const wheelText = document.querySelector(".wheel-text");
   const h3 = document.querySelector(".reveal-title");
+  const wheelContainer = document.querySelector(".wheel-container");
 
   let hasRotated = false;
   let rotation = 0;
 
-  document.querySelector(".wheel-container").addEventListener("click", () => {
-    if (hasRotated) return; // prevent multiple clicks
-    hasRotated = true;
+  const steps = [
+    {
+      label: "Research",
+      gradient: "linear-gradient(to right, #005c97, black)",
+      imgSrc: "images/researchPorto.png",
+      h3Text: "I dive deep into user needs, behaviors, and market trends <br> to uncover key insights.",
+    },
+    {
+      label: "Analysis",
+      gradient: "linear-gradient(to right, #0075be, black)",
+      imgSrc: "images/analysisPorto.png",
+      h3Text: "I examine user behaviours and data to identify patterns and chances for optimizing designs.",
+    },
+    {
+      label: "Ideation",
+      gradient: "linear-gradient(to right, #1e9cd7, black)",
+      imgSrc: "images/ideationPorto.png",
+      h3Text: "I embrace creative thinking and imagination to generate innovative ideas that enhance user experiences.",
+    },
+    {
+      label: "Design",
+      gradient: "linear-gradient(to right, #41b792, black)",
+      imgSrc: "images/designPorto.png",
+      h3Text: "I craft wireframes, prototypes, illustrations, and animations to elevate both user experience and interface design.",
+    },
+    {
+      label: "Development",
+      gradient: "linear-gradient(to right, #49c14c, black)",
+      imgSrc: "images/developmentPorto.png",
+      h3Text: "I bring design concepts to life by developing functional and smooth solutions that blend creativity with technology.",
+    },
+  ];
 
-    // Show the image and text immediately
-    image.style.display = "block";
-    h3.style.display = "block";
+  const resetStep = {
+    label: "Swirl Me",
+    gradient: "linear-gradient(to right, #bababa, black)",
+  };
 
-    // Step definitions
-    const steps = [
-      {
-        text: "Research",
-        gradient: "linear-gradient(to right, #005c97, black)",
-        h3Text: "I examine user behaviours and data to identify patterns and opportunities for optimizing designs",
-        imgSrc: "images/analysisPorto.png"
-      },
-      {
-        text: "Analysis",
-        gradient: "linear-gradient(to right, #0075be, black)",
-        h3Text: "I embrace creative thinking and imagination to generate innovative ideas that enhance user experiences",
-        imgSrc: "images/ideationPorto.png"
-      },
-      {
-        text: "Ideation",
-        gradient: "linear-gradient(to right, #1e9cd7, black)",
-        h3Text: "I craft wireframes, prototypes, illustrations, and animations to elevate both user experience and interface design",
-        imgSrc: "images/designPorto.png"
-      },
-      {
-        text: "Design",
-        gradient: "linear-gradient(to right, #41b792, black)",
-        h3Text: "I bring design concepts to life by developing functional and smooth solutions that blend creativity with technology",
-        imgSrc: "images/developmentPorto.png"
-      },
-      {
-        text: "Development",
-        gradient: "linear-gradient(to right, #49c14c, black)",
-        h3Text: "",
-        imgSrc: ""
-      }
-    ];
-
-    // Apply initial rotation and text (Research)
-    rotation += 360;
-    wheel.style.transition = "transform 0.2s ease";
-    wheel.style.transform = `rotate(${rotation}deg)`;
-
-    wheelText.textContent = "Research";
-    wheelText.style.background = "linear-gradient(to right, #005c97, black)";
+  function updateWheel(step) {
+    wheelText.textContent = step.label;
+    wheelText.style.background = step.gradient;
     wheelText.style.backgroundClip = "text";
     wheelText.style.webkitBackgroundClip = "text";
     wheelText.style.color = "transparent";
     wheelText.style.webkitTextFillColor = "transparent";
 
-    // Handle steps with a loop
+    if (step.h3Text) {
+      // Use innerHTML to allow the <br> tag to work
+      h3.innerHTML = step.h3Text;  // <-- This is where the change is!
+      h3.style.display = "block";
+    }
+
+    if (step.imgSrc) {
+      image.src = step.imgSrc;
+      image.style.display = "block";
+    }
+  }
+
+  wheelContainer.addEventListener("click", () => {
+    if (hasRotated) return;
+    hasRotated = true;
+
+    // Show elements
+    image.style.display = "block";
+    h3.style.display = "block";
+
+    // Set transition always
+    wheel.style.transition = "transform 0.2s ease";
+
+    // Start the swirl
     steps.forEach((step, index) => {
       setTimeout(() => {
         rotation += 360;
         wheel.style.transform = `rotate(${rotation}deg)`;
-
-        // Update text and styles
-        wheelText.textContent = step.text;
-        wheelText.style.background = step.gradient;
-        wheelText.style.backgroundClip = "text";
-        wheelText.style.webkitBackgroundClip = "text";
-        wheelText.style.color = "transparent";
-        wheelText.style.webkitTextFillColor = "transparent";
-
-        // Update h3 and image if available
-        if (step.h3Text) {
-          h3.textContent = step.h3Text;
-        }
-        if (step.imgSrc) {
-          image.src = step.imgSrc;
-        }
-      }, (index + 1) * 5000); // 5000ms (3 seconds) between each
+        updateWheel(step);
+      }, index * 5000); // Every 5 seconds
     });
 
-    // Final step: Reset everything after all rotations
+    // After all steps, reset
     setTimeout(() => {
       rotation += 360;
       wheel.style.transform = `rotate(${rotation}deg)`;
 
-      // Reset text
-      wheelText.textContent = "Swirl Me";
-      wheelText.style.background = "linear-gradient(to right, #bababa, black)";
+      // Update to "Swirl Me"
+      wheelText.textContent = resetStep.label;
+      wheelText.style.background = resetStep.gradient;
       wheelText.style.backgroundClip = "text";
       wheelText.style.webkitBackgroundClip = "text";
       wheelText.style.color = "transparent";
@@ -171,9 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
       h3.style.display = "none";
       image.style.display = "none";
 
-      // Allow another click
-      hasRotated = false;
-    }, (steps.length + 1) * 3000); // steps.length + 1 because we wait one more after last
+      hasRotated = false; // Allow click again!
+    }, steps.length * 5000);
   });
 });
 
@@ -217,6 +217,9 @@ document.addEventListener('DOMContentLoaded', () => {
     eventoProjectImg.addEventListener('mouseout', () => {
       eventoProjectImg.src = 'images/eventoProject.png';
     });
+    eventoProjectImg.addEventListener('click', () => {
+      window.location.href = 'evento.html';
+    });
   }
 
   if (mindquotaProjectImg) {
@@ -225,6 +228,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     mindquotaProjectImg.addEventListener('mouseout', () => {
       mindquotaProjectImg.src = 'images/mindquotaProject.png';
+    });
+    mindquotaProjectImg.addEventListener('click', () => {
+      window.location.href = 'mindquota.html';
     });
   }
 });
