@@ -302,7 +302,12 @@ h5 {
 
 /* =================== MEDIA QUERIES =================== */
 
-/* Small devices (phones, <600px) */
+@media only screen and (min-width: 1280px) {
+  .hero {
+    height: 60vh;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -311,13 +316,21 @@ h5 {
     padding: 20px;
   }
 
+  nav a {
+    margin-bottom: 20%;
+  }
+
+.nav-item {
+    margin-bottom: 20%;
+  }
+
   #logo {
     width: 20%;
+    margin-top: -25%;
     margin-left: 5%;
   }
 
   .nav-item .project-images {
-    display: flex;
     flex-direction: column;
     margin-top: -30%;
   }
@@ -473,7 +486,10 @@ h5 {
     width: 80%;
   }
 
-  #eventoProjectImg,
+  #eventoProjectImg {
+    width: 50%;
+  }
+
   #mindquotaProjectImg {
     width: 70%;
   }
@@ -491,16 +507,16 @@ h5 {
     height: 10%;
   }
   
-  .socialIcons {
+  .social-icons {
     display: flex;
     align-items: center;
   }
   
-  .socialIcons img {
+  .social-icons img {
     transition: transform 0.2s ease;
   }
   
-  .socialIcons img:hover {
+  .social-icons img:hover {
     transform: scale(1.1);
   }
 }
@@ -512,6 +528,9 @@ h5 {
 }
 
 @media only screen and (min-width: 930px) and (max-width: 935px) {
+  .hero {
+    height: 150vh;
+  }
   .wheel-text {
     margin-top: -6%;
   }
@@ -528,13 +547,20 @@ h5 {
 
 @media only screen and (min-width: 914px) and (max-width: 916px) {
   .hero {
-    height: 100vh;
+    height: 175vh;
+    margin-left: -2%;
+  }
+  .skills-dev {
+    margin-left: -2%;
+  }
+  .wheel-text {
+    margin-top: -3%;
   }
 }
 
 @media only screen and (min-width: 880px) and (max-width: 899px) {
   .hero {
-    height: 150vh;
+    height: 185vh;
   }
 }
 
@@ -559,9 +585,15 @@ h5 {
   }
 }
 
+@media only screen and (min-width: 815px) and (max-width: 825px) {
+  .wheel-text {
+    margin-top: -13%;
+  }
+}
+
 @media only screen and (min-width: 650px) and (max-width: 800px) {
   .hero {
-    height: 120vb;
+    height: 175vb;
   }
   .hero p {
     font-size: 17px;
@@ -589,13 +621,21 @@ h5 {
 }
 
 @media only screen and (min-width: 715px) and (max-width: 725px) {
+  .hero{
+    height: 100vb;
+    margin-left: -5%;
+    width: 80%;
+  }
+  .skills-dev {
+    margin-left: -5%;
+  }
   .wheel-text{
-    margin-top: -19%;
+    margin-top: -14%;
   }
 }
 
 @media only screen and (min-width: 660px) and (max-width: 670px) {
-  .socialIcons {
+  .social-icons {
     width: 50%;
   }
   .wheel-text {
@@ -603,9 +643,57 @@ h5 {
   }
 }
 
+@media only screen and (min-width: 400px) and (max-width: 500px) {
+  textpath {
+    font-size: 40px;
+  }
+  button {
+    width: 75%;
+  }
+  .wheel-text {
+    margin-top: -15%;
+  }
+}
 
-@media only screen and (min-width: 1280px) {
-  .hero {
-    height: 60vh;
+@media only screen and (min-width: 410px) and (max-width: 415px) {
+  #logo {
+    margin-top: -40%;
+  }
+  .wheel-text {
+    margin-top: -17%;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 400px) {
+  #logo {
+    margin-top: -47%;
+  }
+  textpath {
+    font-size: 50px;
+  }
+  button {
+    width: 75%;
+  }
+  .wheel-text {
+    font-size: 22px;
+    margin-top: -25%;
+  }
+}
+
+@media only screen and (min-width: 385px) and (max-width: 395px) {
+  .wheel-text {
+    margin-top: -19%;
+  }
+}
+
+@media only screen and (min-width: 370px) and (max-width: 380px) {
+  .wheel-text {
+    margin-top: -21%;
+  }
+}
+
+@media only screen and (min-width: 355px) and (max-width: 365px) {
+  .wheel-text {
+    margin-top: -24%;
   }
 }

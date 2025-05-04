@@ -322,13 +322,12 @@ b {
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .hero {
     margin-bottom: 35%;
     padding-left: 30px;
   }
 
-  .project-logo,
   .evento-gif,
   .userflow-E,
   .wireframe-E,
@@ -340,7 +339,7 @@ b {
   }
 
   .persona {
-    width: 95%;
+    width: 80%;
   }
 
   .right, .bottom {
@@ -350,38 +349,84 @@ b {
   }
 }
 
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .evento-gif {
+    width: 50%;
   }
-
-  .navigation-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 20px;
+  .persona {
+    width: 80%;
   }
+}
 
-  #logo {
-    width: 25%;
-    margin: 0 auto;
-  }
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
 
-  .project-images {
-    position: static;
-    display: block;
-    padding-top: 10px;
+  .footer p {
     width: 100%;
-    height: auto;
+    text-align: center;
+    margin: 5px 0;
   }
 
-  .project-images img {
-    position: relative;
-    width: 100px;
-    margin: 10px 0;
+  .footer img {
+    width: 15%;
+    margin: 10px;
+    margin-left: 20%;
   }
+  
+  .social-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .socia-icons img {
+    transition: transform 0.2s ease;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.1);
+  }
+}
 
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+  .hero {
+   margin-top: 10%; 
+  }
+  .evento-gif {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 910px) and (max-width: 914px) {
+  .hero {
+   margin-top: 0%; 
+   margin-bottom: 40%;
+  }
+  .evento-gif {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 850px) and (max-width: 855px) { 
+  .hero {
+    margin-top: -5%;
+    margin-bottom: 15%;
+   }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 855px) {
+  .hero {
+    height: 60vb;
+  }
+  .uxBody {
+    width: 80%;
+  }
+  .right {
+    width: 90%;
+  }
+}
+
+
+
+@media (max-width: 768px) {
   .hero {
     padding: 0 20px;
     margin: 10% 0;
@@ -389,7 +434,7 @@ b {
   }
 
   .project-logo {
-    width: 80%;
+    width: 50%;
     margin-top: 10%;
   }
 
@@ -412,22 +457,108 @@ b {
 
   .ux,
   .dev {
-    width: 30%;
+    width: 20%;
   }
+}
 
-  .footer {
+@media only screen and (min-width: 700px) and (max-width: 750px) {
+  .hero {
+   margin-bottom: 20%;
+  }
+  .project-logo {
+    width: 50%;
+  }
+  .evento-gif {
+    width: 50%;
+  }
+  .ux, .dev {
+    width: 15%;
+  }
+  .footer p {
+    font-size: 12px;
+  }
+  .footer img {
+    width: 15%;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 700px) {
+  .hero {
+    margin-top: 15%;
+    margin-bottom: 15%;
+  }
+  .project-logo {
+    width: 50%;
+  }
+  .evento-gif {
+    width: 50%;
+    margin-top: -5%;
+  }
+  .ux, .dev {
+    width: 15%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
   }
 
-  .footer p,
-  .footer img {
-    margin: 0;
+  #logo {
+    width: 20%;
+    margin-top: -30%;
+    margin-left: 5%;
   }
 
-  .footer img {
-    width: 10%;
+  .nav-item .project-images {
+    flex-direction: column;
+    margin-top: -30%;
+  }
+
+  .project-images img {
+    width: 20%;
+    margin-left: -30%;
+  }
+
+.mindquota {
+  margin-top: -17%;
+}
+
+.footer {
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer p {
+  width: 100%;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.footer img {
+  width: 5%;
+  margin: 10px;
+  margin-left: 20%;
+}
+}
+
+@media only screen and (min-width: 500px) and (max-width: 550px) {
+  #logo {
+    margin-top: 5%;
+  }
+  .project-logo {
+    width: 50%;
+  }
+  .ux, .dev {
+    width: 20%;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 550px) {
+  .hero {
+    height: 50vb;
   }
 }

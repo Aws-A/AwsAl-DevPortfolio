@@ -330,142 +330,270 @@ b {
 }
 
 /* Responsive Design */
-@media (max-width: 1280px) {
-  /* Large screens */
-  .hero p {
-    font-size: 20px;
-  }
-
-  .project-logo {
-    width: 30%;
-  }
-  
-  .navigation-bar {
-    padding: 20px 40px;
-  }
-  
-  .image-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 1024px) {
-  /* Tablets or small screens */
-  header h1 {
-    font-size: 2rem;
-  }
-
-  main {
-    padding: 1.5rem;
-    gap: 1rem;
-  }
-
+@media only screen and (max-width: 1200px) {
   .hero {
+    margin-bottom: 35%;
     padding-left: 30px;
   }
 
-  .hero h2 {
-    font-size: 20px;
+  .project-logo,
+  .mindquota-gif,
+  .userflow-M,
+  .wireframe-M,
+  .prototype-M,
+  .ERD,
+  .backend-M,
+  .frontend-M {
+    width: 90%;
   }
 
-  .project-logo {
-    width: 40%;
+  .persona {
+    width: 95%;
   }
 
-  .image-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  .right, .bottom {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
   }
 }
 
-@media (max-width: 768px) {
-  /* Tablets in portrait mode */
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .mindquota-gif {
+    width: 50%;
+  }
+  .persona {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2%;
+    margin-bottom: 2%;
   }
 
-  #logo {
-    width: 10%;
+  .footer img {
+    width: 5%;
+    height: 10%;
   }
 
-  .hero {
-    padding-left: 20px;
-    margin-left: 5%;
+  .social-icons {
+    display: flex;
+    align-items: center;
   }
 
-  .hero p {
-    font-size: 18px;
-    max-width: 500px;
+  .social-icons img {
+    transition: transform 0.2s ease;
   }
 
-  .MQ-gif {
-    width: 20%;
+  .social-icons img:hover {
+    transform: scale(1.1);
   }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+
+  .project-logo {
+    width: 50%;
+  }
+  .footer p {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  .footer img {
+    width: 15%;
+    margin: 10px;
+    margin-left: 20%;
+  }
+  
+  .social-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .socia-icons img {
+    transition: transform 0.2s ease;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1025px) {
 
   .project-detail {
     margin-left: 5%;
   }
+}
 
-  .image-grid {
-    grid-template-columns: 1fr;
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+  .hero {
+    margin-top: 10%;
   }
 
-  .footer {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1%;
-  }
-
-  .footer p {
-    text-align: center;
-    margin-left: 0;
+  .mindquota-gif {
+    width: 50%;
   }
 }
 
-@media (max-width: 480px) {
-  /* Small mobile screens */
-  header {
-    padding: 1.5rem 1rem;
+@media only screen and (min-width: 913px) and (max-width: 915px) {
+  .hero {
+    margin-top: 25%;
+    margin-bottom: 40%;
+  }
+  .mindquota-gif {
+    width: 50%;
+  }
+  .uxBody {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 910px) and (max-width: 913px) {
+  .hero {
+    margin-top: 0%;
+    margin-bottom: 0%;
+  }
+  .uxBody {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 850px) and (max-width: 855px) {
+  .hero {
+    margin-top: -5%;
+    margin-bottom: 15%;
+   }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 855px) {
+  .uxBody {
+    width: 80%;
   }
 
-  h1 {
-    font-size: 1.8rem;
+  .right {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+  .hero {
+    margin-top: 25%;
+  }
+  .project-detail {
+    margin-top: 40%;
+  }
+  .ux, .dev {
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 20px;
+    margin: 10% 0;
+    align-items: center;
   }
 
-  main {
-    grid-template-columns: 1fr;
-    padding: 1rem;
+  .project-logo {
+    width: 60%;
+    margin-top: 10%;
   }
 
-  .card {
-    padding: 0.7rem;
+  .mindquota-gif {
+    width: 90%;
+    margin-left: 0;
   }
 
-  .hero h2 {
-    font-size: 18px;
-    text-align: center;
+  .project-detail {
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
-  .hero p {
-    font-size: 16px;
-    text-align: center;
-    margin: 0 auto;
+  .top,
+  .bottom,
+  .right {
+    flex-direction: column;
+    text-align: left;
+  }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 700px) {
+  .hero {
+    margin-top: 15%;
+    margin-bottom: 15%;
   }
 
   .project-logo {
     width: 50%;
   }
 
+  .mindquota-gif {
+    width: 50%;
+    margin-top: -5%;
+  }
+
+  .ux,
+  .dev {
+    width: 15%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  #logo {
+    width: 20%;
+    margin-top: -33%;
+    margin-left: 5%;
+  }
+
+  .MQ-gif {
+    width: 40%;
+    margin-left: 30%;
+  }
+
+  .nav-item .project-images {
+    flex-direction: column;
+    margin-top: -30%;
+  }
+
+  .project-images img {
+    width: 20%;
+    margin-left: -30%;
+  }
+
+  .mindquota {
+    margin-top: -17%;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .footer p {
-    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
   }
 
   .footer img {
-    width: 8%;
-  }
-
-  .project-detail {
-    margin-left: 0;
+    width: 5%;
+    margin: 10px;
+    margin-left: 20%;
   }
 }

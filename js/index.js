@@ -146,10 +146,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Set transition always
     wheel.style.transition = "transform 0.2s ease";
 
+    // Determine the degree of rotation based on window width
+    const rotationIncrement = window.innerWidth < 600 ? 450 : 360; // 390 degrees for screens < 600px
+
     // Start the swirl
     steps.forEach((step, index) => {
       setTimeout(() => {
-        rotation += 360;
+        rotation += rotationIncrement;
         wheel.style.transform = `rotate(${rotation}deg)`;
         updateWheel(step);
       }, index * 5000); // Every 5 seconds
@@ -157,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // After all steps, reset
     setTimeout(() => {
-      rotation += 360;
+      rotation += rotationIncrement;
       wheel.style.transform = `rotate(${rotation}deg)`;
 
       // Update to "Swirl Me"
@@ -279,34 +282,59 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Select the images
-    const uxImage = document.getElementById('ux-img');
-    const devImage = document.getElementById('dev-img');
+    const projectsLink = document.getElementById("projects-link");
+    const projectImages = document.querySelector(".project-images");
+    const eventoImg = document.querySelector(".evento");
+    const mindquotaImg = document.querySelector(".mindquota");
   
-    // Function to check if the element is in the viewport
-    function isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
-  
-    // Function to change image source after 1 second
-    function changeImageOnView(imageElement, newSrc) {
-      if (isInViewport(imageElement)) {
-        setTimeout(() => {
-          imageElement.src = newSrc;
-        }, 1000); // 1 second delay
+    // Function to toggle project images visibility
+    const toggleProjectImages = () => {
+      if (window.innerWidth < 600) {
+        const isHidden = window.getComputedStyle(projectImages).display === "none";
+        projectImages.style.display = isHidden ? "flex" : "none"; // Show or hide
       }
+    };
+  
+    // Toggle project images visibility when "Projects" link is clicked (only for small screens)
+    if (projectsLink && projectImages) {
+      projectsLink.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        toggleProjectImages(); // Call the toggle function
+      });
     }
   
-    // Check images visibility and change them when visible
-    window.addEventListener('scroll', () => {
-      changeImageOnView(uxImage, 'images/ux-on.png');
-      changeImageOnView(devImage, 'images/dev-on.png');
-    });
-  });
+    // Function to handle image click behavior
+    const handleImageClick = (imgElement, hoverImageSrc) => {
+      imgElement.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevent click from propagating to the parent element
+        if (!imgElement.dataset.clicked) {
+          imgElement.src = hoverImageSrc; // Change to hover image
+          imgElement.style.width = "25%"; // Set width to 25%
+          imgElement.dataset.clicked = "true"; // Mark it as clicked to avoid repeated clicks
+        }
+      });
+    };
   
+    // Function to apply click behavior based on window width
+    const applyClickBehavior = (imgElement, hoverImageSrc) => {
+      if (window.innerWidth < 600) {
+        handleImageClick(imgElement, hoverImageSrc);
+      }
+    };
+  
+    // Apply click behavior on page load and window resize
+    if (eventoImg) {
+      applyClickBehavior(eventoImg, "images/eventoHover.png");
+      window.addEventListener('resize', () => {
+        applyClickBehavior(eventoImg, "images/eventoHover.png");
+      });
+    }
+  
+    if (mindquotaImg) {
+      applyClickBehavior(mindquotaImg, "images/mindquotaHover.png");
+      window.addEventListener('resize', () => {
+        applyClickBehavior(mindquotaImg, "images/mindquotaHover.png");
+      });
+    }
+  });   
