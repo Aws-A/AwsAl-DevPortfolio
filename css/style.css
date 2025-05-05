@@ -118,7 +118,7 @@ nav a.active {
   font-size: 25px;
   margin-top: 5%;
   font-weight: normal;
-  background: linear-gradient(to right, #005b97, #0075be, #1e9cd7, #41b792, #49c14c, black, black);
+  background: linear-gradient(to right, #005b97, #0075be, #1e9cd7, #41b792, #49c14c, #49c14c, #49c14c);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
