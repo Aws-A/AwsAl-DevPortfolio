@@ -337,4 +337,35 @@ document.addEventListener('DOMContentLoaded', () => {
         applyClickBehavior(mindquotaImg, "images/mindquotaHover.png");
       });
     }
-  });   
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const images = [
+      { id: 'ux-img', onSrc: 'images/ux-on.png' },
+      { id: 'dev-img', onSrc: 'images/dev-on.png' }
+    ];
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          const newSrc = images.find(i => i.id === img.id)?.onSrc;
+
+          if (newSrc) {
+            // Delay 2 seconds after this specific image is seen
+            setTimeout(() => {
+              img.src = newSrc;
+            }, 2000);
+          }
+
+          // Stop observing this one image
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    images.forEach(({ id }) => {
+      const imgElement = document.getElementById(id);
+      if (imgElement) observer.observe(imgElement);
+    });
+  });
