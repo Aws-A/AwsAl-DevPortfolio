@@ -165,7 +165,7 @@ text {
 }
 
 button {
-  background: linear-gradient(to right, #41b792, #41b792, #49c14c);
+  background: linear-gradient(to right, #005b97, #0075be, #1e9cd7);
   width: 250px;
   height: 50px;
   border: 0px;
@@ -177,7 +177,7 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(to right, #005b97, #0075be, #1e9cd7);
+  background: linear-gradient(to right, #41b792, #41b792, #49c14c);
 }
 
 .skills-dev {
