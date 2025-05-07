@@ -176,9 +176,9 @@ button {
   font-size: 25px;
 }
 
-/* button:hover {
+button:hover {
   background: linear-gradient(to right, #41b792, #41b792, #49c14c);
-} */
+}
 
 .skills-dev {
   display: flex;
