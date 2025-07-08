@@ -378,6 +378,12 @@ h5 {
   }
 }
 
+@media only screen and (min-width: 1150px) and (max-width: 1282px) {
+  .footer img {
+    margin-top: 1.5%;
+  }
+}
+
 @media only screen and (min-width: 900px) and (max-width: 1025px) {
   .engineeringTitle img {
     margin-left: 2%;
@@ -391,6 +397,18 @@ h5 {
   .developmentTitle img{
     margin-left: -72%;
   }
+  .footer p {
+    margin-left: 5%;
+  }
+  .footer img {
+    width: 15%;
+  }
+  .linkedin {
+    margin-right: -33%;
+  }
+  .ii {
+    margin-left: -25%;
+  }
 }
 
 @media only screen and (min-width: 800px) and (max-width: 890px) {
@@ -399,6 +417,12 @@ h5 {
   }
   .developmentTitle img{
     margin-left: -69%;
+  }
+  .footer img {
+    width: 15%;
+  }
+  .footer p {
+    font-size: 12px;
   }
 }
 
@@ -417,10 +441,24 @@ h5 {
   }
   .footer p {
     font-size: 12px;
+    margin-left: 7%;
   }
   .footer img {
     width: 15%;
+    height: 10%;
   }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 855px) {
+    .footer p {
+      margin-left: 5%;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 999px) {
+    .footer p {
+      font-size: 15px;
+    }
 }
 
 /* For mobile devices */
@@ -448,9 +486,9 @@ h5 {
     margin-left: -30%;
   }
 
-.mindquota {
-  margin-top: -17%;
-}
+  .mindquota {
+     margin-top: -17%;
+  }
 
   .hero h2 {
     font-size: 20px;
@@ -500,10 +538,13 @@ h5 {
     text-align: center;
     margin: 5px 0;
   }
-
   .footer img {
-    width: 5%;
+    width: 15%;
     margin: 10px;
-    margin-left: 20%;
+    margin-left: 33%;
+  }
+  .social-icons {
+  display: flex;
+  justify-content: center;
   }
 }

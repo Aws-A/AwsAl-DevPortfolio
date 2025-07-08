@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  wheelContainer.addEventListener("click", () => {
+    wheelContainer.addEventListener("click", () => {
     if (hasRotated) return;
     hasRotated = true;
 
@@ -146,8 +146,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Set transition always
     wheel.style.transition = "transform 0.2s ease";
 
-    // Determine the degree of rotation based on window width
-    const rotationIncrement = window.innerWidth < 600 ? 450 : 360; // 390 degrees for screens < 600px
+    // Helper: get current rotation in degrees
+    const getCurrentRotation = (el) => {
+      const transform = window.getComputedStyle(el).transform;
+      if (transform === "none") return 0;
+      const values = transform.match(/matrix\(([^)]+)\)/)[1].split(", ");
+      const a = parseFloat(values[0]);
+      const b = parseFloat(values[1]);
+      return Math.round(Math.atan2(b, a) * (180 / Math.PI));
+    };
+
+    const rotationIncrement = 360;
+    let rotation = getCurrentRotation(wheel); // get actual current rotation
 
     // Start the swirl
     steps.forEach((step, index) => {

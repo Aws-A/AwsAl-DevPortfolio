@@ -525,6 +525,12 @@ b {
   }
 }
 
+@media only screen and (min-width: 650px) and (max-width: 800px) {
+  .footer p {
+    font-size: 12px;
+  }
+}
+
 
 @media only screen and (min-width: 600px) and (max-width: 700px) {
   .hero {
@@ -592,8 +598,12 @@ b {
   }
 
   .footer img {
-    width: 5%;
+    width: 15%;
     margin: 10px;
-    margin-left: 20%;
+    margin-left: 33%;
+  }
+  .social-icons {
+  display: flex;
+  justify-content: center;
   }
 }
