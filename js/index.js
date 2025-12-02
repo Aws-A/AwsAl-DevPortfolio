@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
         rotation += rotationIncrement;
         wheel.style.transform = `rotate(${rotation}deg)`;
         updateWheel(step);
-      }, index * 5000); // Every 5 seconds
+      }, index * 7000); // Every 5 seconds
     });
 
     // After all steps, reset
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image.style.display = "none";
 
       hasRotated = false; // Allow click again!
-    }, steps.length * 5000);
+    }, steps.length * 7000);
   });
 });
 
